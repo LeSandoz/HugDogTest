@@ -1,0 +1,235 @@
+// 修改變數專用
+//定義顏色
+$primary: #cea160;
+$danger: #dc3545;
+/* btn */
+// .btn {
+//   font-size: 0.85rem;
+//   padding: 0.5rem 1.5rem;
+//   border-radius: 3px;
+//   display: flex;
+//   align-items: center;
+//   color: #fff;
+// }
+// .btn-primary,
+// .btn-primary.focus,
+// .btn-primary:focus {
+//   background-color: #cea160;
+//   border-color: #cea160;
+// }
+// .btn-primary:hover,
+// .btn-primary:not(:disabled):not(.disabled).active,
+// .btn-primary:not(:disabled):not(.disabled):active,
+// .show > .btn-primary.dropdown-toggle {
+//   background-color: #ebbd7d;
+//   border-color: #ebbd7d;
+// }
+//服務
+.Service {
+  * {
+    font-family: 'Roboto', 'Noto Sans TC', sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+  .label-danger {
+    color: $danger;
+    font-weight: bold;
+  }
+  .label-danger::before {
+    content: '*';
+    display: inline-block;
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    color: #ffffff;
+  }
+
+  .loading-bg {
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 1);
+    position: fixed;
+    z-index: 99;
+    display: flex;
+  }
+  .loading-bg .spinner {
+    margin: auto;
+  }
+
+  select.form-control,
+  .custom-control {
+    // font-size: 0.85rem;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  .card-light {
+    background: #eeeeee;
+    border: 1px solid transparent;
+    border-radius: 0;
+  }
+
+  .card-shadow {
+    background: #ffffff;
+    border: 1px solid transparent;
+    border-radius: 0;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.175);
+  }
+
+  .google-map-maker {
+    font-size: 2rem;
+    transform: translate(-50%, -100%);
+    color: #dc3545;
+  }
+
+  .fadeOut {
+    opacity: 0%;
+    transition: 3s;
+  }
+  .inline-block-icon {
+    display: inline-block;
+  }
+  .inline-block-icon img {
+    width: 16px;
+  }
+  .inline-block-icon .icon-text {
+    word-break: keep-all;
+    margin-left: 5px;
+    font-size: 0.9rem;
+  }
+  .avatar {
+    overflow: hidden;
+  }
+  .avatar img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+  }
+  // ul,li
+  ul,
+  li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul.user-data li {
+    margin-bottom: 0.5rem;
+  }
+  ul.user-data li:last-child {
+    margin-bottom: 0;
+  }
+  // icon
+  .mdStar {
+    color: $primary;
+  }
+  .mdStarBorder {
+    color: #cccccc;
+  }
+  hr.title {
+    margin: 0rem auto 1rem 0;
+    width: 80px;
+    border-color: #cccccc;
+  }
+  // 保母列表
+  &.ServiceQuery {
+    a .card-list {
+      color: #555555;
+    }
+    a:hover .card-list {
+      // border: 1px solid #dddddd;
+    }
+    a:hover .card-list .avatar img {
+      transform: scale(1.1);
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+    }
+    @media (min-width: 768px) {
+      .search-col select {
+        width: auto;
+      }
+      .search-col hr.title {
+        margin: 0rem auto 1rem 0;
+        width: 80px;
+      }
+      .avatar {
+        width: 140px;
+        height: 140px;
+      }
+    }
+  }
+  //保母內頁
+  &.ServiceDetail {
+    .avatar {
+      width: 150px;
+      height: 150px;
+    }
+    ul.comment li {
+      border-bottom: 1px solid #cccccc;
+    }
+    ul.comment li:last-child {
+      border-bottom: 1px solid transparent;
+    }
+    ul.comment .avatar {
+      width: 80px;
+      height: 80px;
+    }
+    @media (min-width: 768px) {
+      ul.comment .avatar {
+        width: 100px;
+        height: 100px;
+      }
+    }
+    .dog-size .col {
+      padding: 0.5rem;
+    }
+    .dog-size .icon {
+      height: 50px;
+      display: flex;
+    }
+    .dog-size .icon img {
+      margin: auto auto 0;
+      width: 100%;
+      height: 100%;
+    }
+    .muted {
+      opacity: 0.5;
+    }
+    .dog-size .dog-size-xs .icon img {
+      width: 50%;
+      height: 50%;
+    }
+    .dog-size .dog-size-s .icon img {
+      width: 60%;
+      height: 60%;
+    }
+    .dog-size .dog-size-m .icon img {
+      width: 80%;
+      height: 80%;
+    }
+    .carousel-status {
+      opacity: 0.8;
+    }
+    .carousel .thumb {
+      border: 3px solid transparent;
+    }
+    .carousel .thumb.selected,
+    .carousel .thumb:hover {
+      border: 3px solid $primary;
+    }
+  }
+  &.ServiceBooking {
+  }
+}
