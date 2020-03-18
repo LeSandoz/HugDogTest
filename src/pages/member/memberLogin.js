@@ -18,6 +18,25 @@ import '../../css/member/member-info.scss'
 import MemberSidebar from '../../components/member/member-sidebar'
 import '../../css/member/member-login.scss'
 const MemberLogin = props => {
+  const mId = props.data[0] ? props.data[0].mId : ''
+  const mAccount = props.data[0] ? props.data[0].mAccount : ''
+  const mPassword = props.data[0] ? props.data[0].mPassword : ''
+  $('.login-btn').click(function() {
+    console.log('輸入帳號: ' + $('#exampleInputAccount1').val())
+    console.log('輸入密碼: ' + $('#exampleInputPassword1').val())
+    console.log('帳號: ' + mAccount)
+    console.log('密碼: ' + mPassword)
+    if (
+      $('#exampleInputAccount1').val() === mAccount &&
+      $('#exampleInputPassword1').val() === mPassword
+    ) {
+      console.log('正確')
+      window.location.replace('http://localhost:3000/member/')
+    } else {
+      console.log('不正確')
+      alert('帳號或密碼錯誤')
+    }
+  })
   useEffect(() => {
     props.getMemberData()
 
@@ -33,25 +52,10 @@ const MemberLogin = props => {
     })
     const account = $('#exampleInputAccount1').val()
     const password = $('#exampleInputPassword1').val()
-
-    $('.login-btn').click(function() {
-      console.log($('#exampleInputAccount1').val())
-      console.log($('#exampleInputPassword1').val())
-      if (
-        $('#exampleInputAccount1').val() == '123' &&
-        $('#exampleInputPassword1').val() == '123'
-      ) {
-        console.log('正確')
-        $('.login-btn').attr('to', '/member')
-      } else {
-        console.log('不正確')
-        $('.login-btn').attr('to', '')
-      }
-    })
   }, [])
-  console.log(props.data[0])
+
   const memberData = props.data
-  console.log(memberData[0])
+  // console.log(memberData)
   return (
     <>
       <div className="container login-container">
@@ -97,7 +101,7 @@ const MemberLogin = props => {
             <Link
               type="submit"
               class="btn btn-primary btn-block login-btn"
-              to={'/member/'}
+              // to={'/member/'}
             >
               登入
             </Link>

@@ -17,6 +17,16 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import '../../css/member/member-info.scss'
 import MemberSidebar from '../../components/member/member-sidebar'
 const MemberInfo = props => {
+  const mId = props.data[0] ? props.data[0].mId : ''
+  const mName = props.data[0] ? props.data[0].mName : ''
+  const mAccount = props.data[0] ? props.data[0].mAccount : ''
+  const mPassword = props.data[0] ? props.data[0].mPassword : ''
+  const mImg = props.data[0] ? props.data[0].mImg : ''
+  const mGender = props.data[0] ? props.data[0].mGender : ''
+  const mBday = props.data[0] ? props.data[0].mBday : ''
+  const mPhone = props.data[0] ? props.data[0].mPhone : ''
+  const mEmail = props.data[0] ? props.data[0].mEmail : ''
+  const mAddress = props.data[0] ? props.data[0].mAddress : ''
   useEffect(() => {
     props.getMemberData()
 
@@ -121,84 +131,97 @@ const MemberInfo = props => {
                                   <input
                                     type="text"
                                     name="dId"
-                                    value="1"
+                                    value={mId}
                                     class="form-control"
                                   />
                                 </td>
                               </tr>
                               <tr>
-                                <td class="text-right">狗狗姓名</td>
+                                <td class="text-right">會員姓名</td>
                                 <td>
                                   <input
                                     type="text"
                                     name="dName"
-                                    value="Sunny"
+                                    value={mName}
                                     class="form-control"
                                   />
                                 </td>
                               </tr>
                               <tr>
-                                <td class="text-right">主人編號</td>
+                                <td class="text-right">會員帳號</td>
                                 <td>
                                   <input
                                     type="text"
                                     name="mId"
-                                    value="m001"
+                                    value={mAccount}
                                     class="form-control"
                                   />
                                 </td>
                               </tr>
                               <tr>
-                                <td class="text-right">狗狗性別</td>
+                                <td class="text-right">會員密碼</td>
                                 <td>
                                   <input
                                     type="text"
                                     name="dGender"
-                                    value="girl"
+                                    value={mPassword}
                                     class="form-control"
                                   />
                                 </td>
                               </tr>
                               <tr>
-                                <td class="text-right">狗狗年紀</td>
+                                <td class="text-right">會員性別</td>
                                 <td>
                                   <input
                                     placeholder="歲"
                                     type="text"
                                     name="dYear"
-                                    value="6"
-                                    class="form-control"
-                                  />
-                                </td>
-                                <td>
-                                  <input
-                                    placeholder="月"
-                                    type="text"
-                                    name="dMonth"
-                                    value="2"
+                                    value={mGender}
                                     class="form-control"
                                   />
                                 </td>
                               </tr>
                               <tr>
-                                <td class="text-right">狗狗體重</td>
+                                <td class="text-right">會員生日</td>
                                 <td>
                                   <input
                                     type="text"
                                     name="dWeight"
                                     class="form-control"
-                                    value="4"
+                                    value={mBday}
                                   />
                                 </td>
                               </tr>
                               <tr>
-                                <td class="text-right">狗狗資訊</td>
+                                <td class="text-right">會員電話</td>
                                 <td>
                                   <input
                                     type="text"
                                     name="dInfo"
                                     class="form-control"
-                                    value=""
+                                    value={mPhone}
+                                  />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="text-right">會員信箱</td>
+                                <td>
+                                  <input
+                                    type="text"
+                                    name="dInfo"
+                                    class="form-control"
+                                    value={mEmail}
+                                  />
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="text-right">會員地址</td>
+                                <td>
+                                  <input
+                                    type="text"
+                                    name="dInfo"
+                                    class="form-control"
+                                    value={mAddress}
                                   />
                                 </td>
                               </tr>
